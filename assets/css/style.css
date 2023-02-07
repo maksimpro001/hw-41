@@ -1,0 +1,59 @@
+.chek {
+  margin: 2em;
+}
+#chekini {
+  display: none;
+}
+#chekini + .chek,
+#chekini + .chek::before,
+#chekini + .chek::after {
+  transition: all 0.3s;
+}
+#chekini + .chek {
+  display: inline-block;
+  position: relative;
+  width: 140px;
+  height: 60px;
+  border-radius: 30px;
+  cursor: pointer;
+}
+#chekini + .chek::before {
+  display: block;
+  content: attr(data-offlabel);
+  position: absolute;
+  top: 18px;
+  right: 10px;
+  color: black;
+  font-family: "Open Sans", sans-serif;
+  font-size: 19px;
+}
+#chekini + .chek::after {
+  border-radius: 50%;
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 54px;
+  height: 54px;
+  background-color: white;
+}
+#chekini:checked + .chek::before {
+  content: attr(data-onlabel);
+  left: 16px;
+  right: auto;
+  color: #fff;
+}
+#chekini:checked + .chek::after {
+  left: 83px;
+  background-color: #f7f7f7;
+}
+
+#chekini + .chek {
+  background-color: #ccc;
+}
+#chekini:checked + .chek {
+  background-color: green;
+}
+#chekini:checked + .chek::before {
+  color: #fff;
+}
